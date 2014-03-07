@@ -7,9 +7,9 @@ enable :sessions
 use Rack::Flash, :sweep => true
 
 # set :database, "sqlite3:///satSinatra.sqlite3"
-configure(:development){set :
-database, "sqlite:///blog.sqlite3"}
+configure(:development){set :database, "sqlite:///blog.sqlite3"}
 set :sessions, true
+
 
 # get '/' do
 # 	# paste this into irb to create users and avoid dupes... (don't have to run this inside of a route.)
