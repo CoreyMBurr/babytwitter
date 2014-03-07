@@ -1,0 +1,16 @@
+<div class="taskbar">
+	<a href="/">home</a>
+	<a href="/news">news feed</a>
+	<a href="/logout">logout</a>
+</div>
+
+<p>this is the news feed</p>
+
+<!-- show all users posts -->
+<div>
+	<ul class="all-posts-news-feed">
+		<%Post.all().each do |z| %>
+			<li class="p"><%= z.text %></li>
+		 <% end %>
+		</ul>
+</div>

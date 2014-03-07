@@ -1,0 +1,34 @@
+<div class="time">
+	<span>
+		<%=Time.now %>
+	</span>
+</div>
+
+<div class="taskbar">
+	<a href="/">home</a>
+	<a href="/news">news feed</a>
+	<a href="/logout">logout</a>
+</div>
+
+<div class="profile-info">
+	<p class="welcome-title">Welcome to <%=@user.full_name if @user %>'s home page</p>
+
+	<p>VHS salvia nesciunt ethical Cosby sweater, PBR magna laborum ad excepteur post-ironic wayfarers whatever. Distillery placeat sint, messenger bag chambray exercitation butcher selfies. Actually fashion axe vegan, laborum ethical fap umami trust fund eu vero next level assumenda ea selfies consectetur. Craft beer McSweeney's shabby chic food truck, Vice brunch American Apparel mixtape fingerstache single-origin coffee. Labore literally hella pork belly, cupidatat readymade plaid consequat brunch. Freegan aliquip post-ironic placeat pork belly, culpa aliqua vero officia nesciunt. Quis yr hashtag polaroid, pop-up biodiesel reprehenderit seitan.<br><br>
+	Do you need some dummy text? *sigh* Of course you do.<br><br>
+	I bet you still use Helvetica too…<br></p>
+</div>
+	
+<!-- show only the current users posts -->	
+		<!-- display all of the user's posts -->
+<ul class="each-post">
+	<%Post.where(user_id: @user.id).each do |z| %>
+			<li class="post"><%= z.text %></li>
+		 <% end %>
+</ul>
+
+<form class="form-container" method="POST" action="/home">
+	<textarea class="post-input" type="textarea" name="[post]text" maxlength="140" placeholder="Type your post here..." autofocus required></textarea>
+	
+	<input class="post-button" type="submit" value="POST">
+</form>
+

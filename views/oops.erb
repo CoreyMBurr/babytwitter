@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Cannot Login</title>
+</head>
+<body>
+	<p class="flash">There was a problem logging you in.</p>
+		<div>
+			<!-- Welcome, <%=@user.fname if @user %> -->
+
+<!-- 			<p>Please sign in</p>
+ -->
+			<form action="sessions/new" method="POST"> 
+				<label for="username">Username</label> 
+				<input type="text" name="username"> 
+				<label for="password">Password</label> 
+				<input type="password" name="password"> 
+				<input type="submit">
+			</form>
+		</div>
+</body>
+</html>

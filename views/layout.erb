@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sat Sinatra App</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		
+		<%if flash[:notice] %>
+			<div class="flash">
+				<div class="notice">
+					<%=flash[:notice] %>
+				</div>
+			</div>
+		<% end %>
+
+		<%if flash[:alert] %>
+			<div class="alert">
+				<%=flash[:alert] %>
+			</div>
+		<% end %>
+
+		<div id="stuffThatChanges">
+			<!-- <p class="title">This stuff is on a page by page basis.</p> -->
+			<%= yield %>
+		</div>
+
+	</body>
+</html>
